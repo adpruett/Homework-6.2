@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131115011911) do
+ActiveRecord::Schema.define(version: 20131116205243) do
 
   create_table "addresses", force: true do |t|
     t.integer  "person_id"
     t.string   "street"
     t.string   "city"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "zip",        default: "98104"
+  end
+
+  create_table "friends", force: true do |t|
+    t.integer  "person_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +36,15 @@ ActiveRecord::Schema.define(version: 20131115011911) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "pets", force: true do |t|
+    t.integer  "person_id"
+    t.string   "name"
+    t.string   "genus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "type"
   end
 
 end
